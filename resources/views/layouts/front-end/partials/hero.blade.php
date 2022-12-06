@@ -1,7 +1,7 @@
 
   <div class="container-fluid" style="padding-top:5px;">
     <div class="row">
-      <div class="col-lg-10 col-md-10 col-sm-12>
+      <div class="col-lg-9 col-md-10 col-sm-12">
         <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
           <div class="carousel-inner">
             <div class="carousel-item active">
@@ -16,11 +16,11 @@
           </div>
         </div>
       </div>
-      <div class="col-lg-2 col-md-2 col-sm-12>
+      <div class="col-lg-3 col-md-2 col-sm-12">
                 @php($categories=\App\Model\Category::with(['childes.childes'])->where('position',
                 0)->priority()->paginate(11))
                 <ul
-                    class="navbar-nav mega-nav pr-2 pl-2 {{Session::get('direction') === "rtl" ? 'ml-2' : 'mr-2'}} d-none d-xl-block ">
+                    class="navbar-nav hides mega-nav pr-2 pl-2 {{Session::get('direction') === "rtl" ? 'ml-2' : 'mr-2'}} d-none d-xl-block ">
                     <!--web-->
                     <li class="navs side-baring nav-item {{!request()->is('/')?'dropdown':''}}">
                         <a class="nav-link  dropdown-toggle {{Session::get('direction') === "rtl" ? 'pr-0' : 'pl-0'}}"
@@ -178,6 +178,7 @@
                 </ul>
 
             </div>
+      </div>
     </div>
   </div>
 
@@ -189,7 +190,7 @@
 
 
 
-   <style>
+  <style>
     .offer .bg-secondary{
       background-color:#2ebd30 !important;
     }
@@ -239,6 +240,18 @@ img {
     background-color:#2ebd30 !important;
 }
 .offer a{
-  border: none !important;
+    border: none !important;
 }
 </style>
+
+<script>
+    let hides = document.querySelector(".hides")
+    let droptoggle = document.querySelector(".drop-toggle")
+
+    droptoggle.onclick = function (){
+        hides.classList.toggle("d-none")
+    }
+    hides.onclick = function(){
+        hides.classList.toggle("d-none")
+    }
+</script>
