@@ -86,7 +86,7 @@
   #FOOTER
 \*-----------------------------------*/
 footer{
-    background: #212121;
+    background: #edb007;
     color: #fff !important;
     font-size: 20px;
     font-weight: bold;
